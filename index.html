@@ -7,61 +7,66 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h2>Generate a grid first:</h2>
-    <label>Size: </label>
-    <input
-      type="number"
-      id="width"
-      class="input"
-      placeholder="width"
-      value="20"
-    />
-    x
-    <input
-      type="number"
-      id="height"
-      class="input"
-      placeholder="height"
-      value="20"
-    /><button onclick="generate()">Generate</button>
+    <div id="start">
+      <h2>Generate a grid first:</h2>
+      <label>Size: </label>
+      <input
+        type="number"
+        id="width"
+        class="input"
+        placeholder="width"
+        value="20"
+      />
+      x
+      <input
+        type="number"
+        id="height"
+        class="input"
+        placeholder="height"
+        value="20"
+      /><br />
+      <button onclick="generate()">Generate</button>
+    </div>
 
     <div id="maze" class="maze"></div>
 
-    <label>Start:</label>
-    <input
-      type="number"
-      id="start-x"
-      class="input-sm"
-      placeholder="x"
-      value="1"
-    />,
-    <input
-      type="number"
-      id="start-y"
-      class="input-sm"
-      placeholder="y"
-      value="1"
-    /><br />
-    <label>End:</label>
-    <input
-      type="number"
-      id="end-x"
-      class="input-sm"
-      placeholder="x"
-      value="1"
-    />,
-    <input
-      type="number"
-      id="end-y"
-      class="input-sm"
-      placeholder="y"
-      value="1"
-    /><br />
-    <p>
-      Warning: if it is impossible then it will crash so make it possible!!!
-    </p>
-    <button onclick="solve()">Solve</button>
-    <p id="steps"></p>
+    <div id="pathfinding" style="display: none;">
+      <label>Start:</label>
+      <input
+        type="number"
+        id="start-x"
+        class="input-sm"
+        placeholder="x"
+        value="1"
+      />,
+      <input
+        type="number"
+        id="start-y"
+        class="input-sm"
+        placeholder="y"
+        value="1"
+      /><br />
+      <label>End:</label>
+      <input
+        type="number"
+        id="end-x"
+        class="input-sm"
+        placeholder="x"
+        value="1"
+      />,
+      <input
+        type="number"
+        id="end-y"
+        class="input-sm"
+        placeholder="y"
+        value="1"
+      /><br />
+      <p>
+        Warning: if it is impossible then it will crash so make it possible!!!
+      </p>
+      <button onclick="solve()">Solve</button>
+      <p id="steps"></p>
+    </div>
 
     <script src="script.js"></script>
   </body>
