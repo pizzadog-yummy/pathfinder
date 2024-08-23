@@ -24,6 +24,9 @@ function generate() {
   cHeight = height;
   const maze = document.getElementById("maze");
 
+  document.getElementById('start').innerHTML = '<h2>Pathfinder</h2>';
+  document.getElementById('pathfinding').style.display = 'block'
+
   if (
     isNaN(width) ||
     isNaN(height) ||
@@ -39,10 +42,8 @@ function generate() {
   maze.style.gridTemplateColumns = `repeat(${width}, 30px)`;
   maze.style.gridTemplateRows = `repeat(${height}, 30px)`;
 
-  // Clear existing grid
   maze.innerHTML = "";
 
-  // Generate new grid
   for (let i = 0; i < width * height; i++) {
     const cell = document.createElement("div");
     cell.classList.add(
@@ -81,7 +82,6 @@ function handleMouseDown(e) {
   const currentValue = parseInt(this.dataset.value, 10);
   const newValue = (currentValue + 1) % 2;
   this.dataset.value = newValue;
-  // Update class names
   const baseClasses = "cell value" + newValue;
   const xClass = Array.from(this.classList).find((cls) => cls.startsWith("x-"));
   const yClass = Array.from(this.classList).find((cls) => cls.startsWith("y-"));
@@ -117,7 +117,6 @@ function shortestPath(maze, k) {
     }
   }
 
-  // BFS queue: [current position, steps taken, remaining bypasses]
   const queue = [[start, 0, k]];
   const visited = new Set([`${start}-${k}`]);
   const parent = new Map();
@@ -198,7 +197,6 @@ function solve() {
   const endX = parseInt(document.getElementById("end-x").value, 10);
   const endY = parseInt(document.getElementById("end-y").value, 10);
 
-  // Mark start and end points on the maze
   bMaze[startY - 1][startX - 1] = "S";
   bMaze[endY - 1][endX - 1] = "E";
 
