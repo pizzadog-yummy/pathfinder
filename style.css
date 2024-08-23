@@ -1,0 +1,40 @@
+.input {
+  width: 60px;
+}
+
+.input-sm {
+  width: 30px;
+}
+
+.maze {
+  display: grid;
+  /* border: 1px black solid; */
+  margin-top: 10px;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.value0 {
+  background-color: white;
+}
+.value1 {
+  background-color: lightblue;
+}
+.value2 {
+  background-color: lightcoral;
+}
+.path {
+  background: lightgreen;
+}
+p {
+  margin: 5px;
+}
